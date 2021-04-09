@@ -1,8 +1,9 @@
 import React from "react"
 import Header from "../components/Header"
-import "../assets/styles/Login.scss"
 import FormLogin from "../components/FormLogin"
 import Footer from "../components/Footer"
+
+import "../assets/styles/Login.scss"
 
 const Login = () => (
 	<div>

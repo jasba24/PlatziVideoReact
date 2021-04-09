@@ -1,5 +1,5 @@
 import React from "react"
-import "../assets/styles/components/FormLogin.scss"
+import { Link } from "react-router-dom"
 import googleIcon from "../assets/static/google-icon.png"
 import twitterIcon from "../assets/static/twitter-icon.png"
 
@@ -48,11 +48,12 @@ const FormLogin = ({
 
 				{registerIsTrue ? (
 					<p className="login__container--register">
-						No tienes ninguna cuenta
-						<a href="">{link}</a>
+						No tienes ninguna cuenta <Link to="/register">{link}</Link>
 					</p>
 				) : (
-					<a className="register__link" href="">{link}</a>
+					<Link className="register__link" to="/login">
+						{link}
+					</Link>
 				)}
 			</section>
 		</section>
