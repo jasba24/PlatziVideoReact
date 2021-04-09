@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Header from "../components/Header"
 import Search from "../components/Search"
 import Categories from "../components/Categories"
@@ -11,7 +11,7 @@ import "../assets/styles/App.scss"
 
 const API = "http://localhost:3000/initalState"
 
-const App = () => {
+const VistaPrincipal = () => {
 	const initialState = useInitialState(API)
 	return (
 		<div className="App">
@@ -49,4 +49,4 @@ const App = () => {
 	)
 }
 
-export default App
+export default VistaPrincipal
