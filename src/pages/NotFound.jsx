@@ -6,8 +6,8 @@ import "../assets/styles/NotFound.scss"
 const NotFound = () => (
 	<div>
 		<Header />
-		<section class="not-found">
-			<h2 class="not-found__title">404</h2>
+		<section className="not-found">
+			<h2 className="not-found__title">404</h2>
 			<h3>Página no encontrada</h3>
 		</section>
 		<Footer />
