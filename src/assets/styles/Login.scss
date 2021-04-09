@@ -1,0 +1,30 @@
+@import "./Vars.scss";
+
+body {
+	margin: 0;
+	font-family: $theme-font;
+	background: initial;
+}
+
+* {
+	box-sizing: initial;
+}
+
+.header {
+	background: #21c08b;
+}
+
+@media only screen and (max-width: 600px) {
+	.login__container {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		padding: 0px;
+		width: 100%;
+	}
+
+	.footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}

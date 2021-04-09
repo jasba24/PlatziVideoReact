@@ -15,7 +15,7 @@ const VistaPrincipal = () => {
 	const initialState = useInitialState(API)
 	return (
 		<div className="App">
-			<Header />
+			<Header userIsTrue/>
 			<Search />
 
 			{initialState.mylist.length > 0 && (
