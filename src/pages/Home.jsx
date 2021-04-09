@@ -11,7 +11,7 @@ import "../assets/styles/App.scss"
 
 const API = "http://localhost:3000/initalState"
 
-const VistaPrincipal = () => {
+const Home = () => {
 	const initialState = useInitialState(API)
 	return (
 		<div className="App">
@@ -49,4 +49,4 @@ const VistaPrincipal = () => {
 	)
 }
 
-export default VistaPrincipal
+export default Home
