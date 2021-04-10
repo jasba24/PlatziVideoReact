@@ -1,28 +1,57 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { connect } from "react-redux"
+import { Link, withRouter } from "react-router-dom"
+import { loginRequest } from "../actions"
 import googleIcon from "../assets/static/google-icon.png"
 import twitterIcon from "../assets/static/twitter-icon.png"
 
-const FormLogin = ({
-	title,
-	button,
-	registerIsFalse,
-	registerIsTrue,
-	link,
-}) => {
+const FormLogin = props => {
+	const { title, button, registerIsFalse, registerIsTrue, link } = props
+	const [form, setValues] = useState({
+		email: "",
+		name: "",
+	})
+
+	const handleInput = event => {
+		setValues({
+			...form,
+			[event.target.name]: event.target.value,
+		})
+	}
+
+	const handleSubmit = event => {
+		event.preventDefault()
+		props.loginRequest(form)
+		props.history.push("/")
+	}
+
 	return (
 		<section className="login">
 			<section className="login__container">
 				<h2>{title}</h2>
-				<form className="login__container--form">
+				<form className="login__container--form" onSubmit={handleSubmit}>
 					{registerIsFalse && (
-						<input className="input__login" type="text" placeholder="Name" />
+						<input
+							className="input__login"
+							type="text"
+							placeholder="Name"
+							name="name"
+							onChange={handleInput}
+						/>
 					)}
-					<input className="input__login" type="text" placeholder="Correo" />
+					<input
+						className="input__login"
+						type="text"
+						placeholder="Correo"
+						name="email"
+						onChange={handleInput}
+					/>
 					<input
 						className="input__login"
 						type="password"
 						placeholder="Contraseña"
+						name="password"
+						onChange={handleInput}
 					/>
 					<button className="button__login">{button}</button>
 					{registerIsTrue && (
@@ -60,4 +89,8 @@ const FormLogin = ({
 	)
 }
 
-export default FormLogin
+const mapDispatchToProps = {
+	loginRequest,
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(FormLogin))
