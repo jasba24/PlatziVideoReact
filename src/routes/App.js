@@ -4,15 +4,18 @@ import Home from "../pages/Home"
 import Login from "../pages/Login"
 import Register from "../pages/Register"
 import NotFound from "../pages/NotFound"
+import Layout from "../components/Layout"
 
 const App = () => (
 	<Router>
-		<Switch>
-			<Route exact path="/" component={Home} />
-			<Route exact path="/login" component={Login} />
-			<Route exact path="/register" component={Register} />
-			<Route component={NotFound} />
-		</Switch>
+		<Layout>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/login" component={Login} />
+				<Route exact path="/register" component={Register} />
+				<Route component={NotFound} />
+			</Switch>
+		</Layout>
 	</Router>
 )
 
