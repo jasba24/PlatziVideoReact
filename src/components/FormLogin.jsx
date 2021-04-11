@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
+import PropTypes from "prop-types"
 import { Link, withRouter } from "react-router-dom"
 import { loginRequest } from "../actions"
 import googleIcon from "../assets/static/google-icon.png"
@@ -87,6 +88,12 @@ const FormLogin = props => {
 			</section>
 		</section>
 	)
+}
+
+FormLogin.propTypes = {
+	title: PropTypes.string,
+	button: PropTypes.string,
+	link: PropTypes.string,
 }
 
 const mapDispatchToProps = {
