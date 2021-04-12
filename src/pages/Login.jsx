@@ -1,21 +1,18 @@
 import React from "react"
-import Header from "../components/Header"
+import {connect} from "react-redux"
 import FormLogin from "../components/FormLogin"
-import Footer from "../components/Footer"
 
 import "../assets/styles/Login.scss"
 
 const Login = () => (
-	<div>
-		<Header />
+	<>
 		<FormLogin
 			registerIsTrue
 			title="Inicia sesión"
 			link="Registrate"
 			button="Iniciar sesión"
 		/>
-		<Footer />
-	</div>
+	</>
 )
 
-export default Login
+export default connect(null, null)(Login)
