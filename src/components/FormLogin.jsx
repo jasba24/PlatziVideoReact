@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import { Link, withRouter } from "react-router-dom"
-import { loginRequest } from "../actions"
+import { loginRequest, registerRequest } from "../actions"
 import googleIcon from "../assets/static/google-icon.png"
 import twitterIcon from "../assets/static/twitter-icon.png"
 
@@ -23,6 +23,7 @@ const FormLogin = props => {
 	const handleSubmit = event => {
 		event.preventDefault()
 		props.loginRequest(form)
+		props.registerRequest(form)
 		props.history.push("/")
 	}
 
@@ -98,6 +99,7 @@ FormLogin.propTypes = {
 
 const mapDispatchToProps = {
 	loginRequest,
+	registerRequest,
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(FormLogin))

@@ -3,4 +3,5 @@ export const actions = {
 	deleteFavorite: "DELETE_FAVORITE",
 	loginRequest: "LOGIN_REQUEST",
 	logoutRequest: "LOGOUT_REQUEST",
+	RegisterRequest: "REGISTER_REQUEST",
 }

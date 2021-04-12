@@ -19,3 +19,8 @@ export const logoutRequest = payload => ({
 	type: actions.logoutRequest,
 	payload,
 })
+
+export const registerRequest = payload => ({
+	type: actions.registerRequest,
+	payload,
+})
